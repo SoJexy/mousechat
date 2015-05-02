@@ -1,10 +1,10 @@
 # mousechat
 Hello friend. Welcome to mousechat. This is a web application to promote anonymous student/professor chat
 
-# Installation
+## Installation
 This requires any browser and node.js. Download node.js [here](https://nodejs.org/).
 
-# Running
+## Running
 Run the server in cmd line using
 ```
 node server.js
