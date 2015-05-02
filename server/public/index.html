@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mousechat</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+
+    <body>
+    <div id="main" class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active">
+                    <a id="home" href="#">Home</a>
+                </li>
+                <li>
+                    <a id="about" href="#">About</a>
+                </li>
+            </ul>
+            <h3 class="text-muted">MouseChat</h3>
+        </div>
+        <div id="aboutBody" class="jumbotron">
+            <h1>About Mousechat</h1>
+            <p class="lead"><i>
+            Mousechat is a Student-Professor Interaction Software Interface. In short, it lets you ask the professor questions while still being as quiet as a mouse!</i></p>
+            <p class="well">Choose to either host a room by clicking "Professor", or to join a pre-existing room setup by your professor by clicking "Student".</p>
+            <button id="aboutClose" class="btn btn-primary">I got it!</button>
+        </div>
+        <div id="errors" class="alert alert-danger"></div>
+        <div class="container">
+        <div id="index">
+            <h1>Welcome to Mousechat</h1>
+            <h2>Are you a</h2>
+            <p>
+            <button class="btn btn-lg btn-primary" id="host">
+                Professor ?</button>
+            <button class="btn btn-lg btn-primary" id="client">
+                Student ?</button>
+            </p>
+        </div>
+        </div>
+            <div id="login">
+                <form id="loginForm" class="form-signin">
+                    <h2 class="form-signin-heading"> Please enter a room name and password</h2>
+                    <input type="text" placeholder="Room Name" id="roomName" class="form-control">
+                    <input type="password" placeholder="Password" id="roomPW" class="form-control">
+                    <div class="btn-group btn-group-justified">
+                    <div class="btn-group">
+                    <input type="submit" name="roomSubmit" id="roomSubmit" value="roomSubmit" class="btn btn-lg btn-primary"><button type="button" id="goBack" class="btn btn-lg btn-default">Go back</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        <div id="mainChat" class= "container">
+            <div id="userPanel" class="col-md-4">
+                <div class="panel panel-primary">
+                    <div id="userHeading" class="panel-heading"><h2>USERS</h2></div>
+                    <div id="userDiv" class="panel-body">
+                    <i>Professor</i>
+                    <div id="users"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="chatPanel" class="col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                    <div id="adminMenu" class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="#" id="toggleChat"><span id="tcIcon" class="glyphicon glyphicon-phone-alt">
+                            </span><span id="tcTxt">Disable Chat</span></a></li>
+                            <li><a href="#" id="toggleOpenMsg"><span id="omIcon" class="glyphicon glyphicon-eye-open">
+                            </span><span id="omTxt">Open Floor</span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="hostExit"><span class="glyphicon glyphicon-off"></span>
+                                Quit</a></li>
+                        </ul>
+                    </div>
+                    <div id="clientMenu" class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs" id="clientExit">
+                        <span class="glyphicon glyphicon-off"></span></button>
+                    </div>
+
+                    <h2><span id="roomTitle"></span></h2>
+
+
+                    </div>
+                    <div id="chatDiv" class="panel-body">
+                            <div id="chatlog"></div>                         
+                    </div>
+                    <div id= "chatBar" class="panel-footer">
+                        <div class="input-group">
+                            <input id="message" type="text" class="form-control input-sm" placeholder="Write a message..." />
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning btn-sm" id="messageSend">
+                                    Send</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <p>© Justin Si 2014</p>
+        </div>
+    </div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="js/client.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>    
+</html>
